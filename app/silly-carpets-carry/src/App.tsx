@@ -23,6 +23,7 @@ import EditPage from "./pages/company/edit";
 import List from "./pages/tasks/list";
 import EditTask from "./pages/tasks/edit";
 import CreateTask from "./pages/tasks/create";
+import Trade from "./pages/trade/trade";
 ;
 
 
@@ -73,6 +74,7 @@ function App() {
                         <Route path="new" element={<CreateTask />} />
                         <Route path="edit/:id" element={<EditTask />} />
                       </Route>
+                      <Route path="/trade" element={<Trade/>}/>
                   </Route>
                 </Routes>
 

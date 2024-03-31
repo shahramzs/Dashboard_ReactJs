@@ -13,14 +13,14 @@ import routerBindings, {
   DocumentTitleHandler,
   UnsavedChangesNotifier,
 } from "@refinedev/react-router-v6";
-import { App as AntdApp, List } from "antd";
+import { App as AntdApp } from "antd";
 import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import { authProvider } from "./providers";
 import {Home, ForgotPassword, Login, Register, CompanyList} from "./pages";
 import Layout from "./components/layout";
 import { resources } from "./config/resources";import Create from "./pages/company/create";
 import EditPage from "./pages/company/edit";
-import TasksList from "./pages/tasks/list";
+import List from "./pages/tasks/list";
 import EditTask from "./pages/tasks/edit";
 import CreateTask from "./pages/tasks/create";
 ;
@@ -66,9 +66,9 @@ function App() {
                          <Route path="edit/:id" element={<EditPage/>}/>
                        </Route>
                        <Route path="/tasks" element={
-                        <TasksList>
+                        <List>
                           <Outlet />
-                        </TasksList>
+                        </List>
                       }>
                         <Route path="new" element={<CreateTask />} />
                         <Route path="edit/:id" element={<EditTask />} />

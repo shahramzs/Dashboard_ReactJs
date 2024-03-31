@@ -12,6 +12,7 @@ import { TaskStagesQuery, TasksQuery } from '@/graphql/types'
 import { DragEndEvent } from '@dnd-kit/core'
 import { useList, useNavigation, useUpdate } from '@refinedev/core'
 import { GetFieldsFromList } from '@refinedev/nestjs-query'
+import { Card } from 'antd'
 import React from 'react'
 
 type Task = GetFieldsFromList<TasksQuery>
@@ -119,7 +120,7 @@ const List = ({ children }: React.PropsWithChildren) => {
   if(isLoading) return <PageSkeleton />
 
   return (
-    <>
+    <div>
       <KanbanBoardContainer>
         <KanbanBoard onDragEnd={handleOnDragEnd}>
           <KanbanColumn
@@ -172,7 +173,7 @@ const List = ({ children }: React.PropsWithChildren) => {
         </KanbanBoard>
       </KanbanBoardContainer>
       {children}
-    </>
+    </div>
   )
 }
 
